@@ -1,18 +1,18 @@
 package com.machinist;
 
 import android.app.Activity;
-import android.content.Context;
+//import android.content.Context;
 import android.content.pm.ActivityInfo;
-import android.hardware.Sensor;
+/*import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
+import android.hardware.SensorManager;*/
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class SteeringActivity extends Activity implements SensorEventListener {
+public class SteeringActivity extends Activity { // implements SensorEventListener {
 	@Override
 	protected void onDestroy() {
 		Connector.Instance().DisconnectClient();
@@ -24,8 +24,8 @@ public class SteeringActivity extends Activity implements SensorEventListener {
 
 	SteeringView steeringView;
 	
-	private SensorManager sensorService;
-	private Sensor sensor;
+	//private SensorManager sensorService;
+	//private Sensor sensor;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,8 +39,8 @@ public class SteeringActivity extends Activity implements SensorEventListener {
         steeringView = new SteeringView(this);
         setContentView(steeringView);
         
-        sensorService = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        sensor = sensorService.getDefaultSensor(Sensor.TYPE_ORIENTATION);
+        //sensorService = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        //sensor = sensorService.getDefaultSensor(Sensor.TYPE_ORIENTATION);
         //steeringView.set_pitch("Unavailable");
 	}
 	
@@ -74,13 +74,13 @@ public class SteeringActivity extends Activity implements SensorEventListener {
         return super.onKeyDown(keyCode, event);
     }
 		
-	@Override
+	/*@Override
 	public void onAccuracyChanged(Sensor arg0, int arg1) {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 
-	@Override
+	/*@Override
 	public void onSensorChanged(SensorEvent event) {
 		if (event != null) {
 			Track.Instance().azimuth_angle = event.values[0];
@@ -88,7 +88,7 @@ public class SteeringActivity extends Activity implements SensorEventListener {
 			
 			//Helper.logtext = Float.toString(Track.Instance().azimuth_angle);
 			
-			/*synchronized(this) {
+			*//*synchronized(this) {
 				switch (event.sensor.getType()) {
 					case Sensor.TYPE_GYROSCOPE: {
 						Track.Instance().azimuth_angle = event.values[0];
@@ -100,21 +100,21 @@ public class SteeringActivity extends Activity implements SensorEventListener {
 						Helper.logtext = Float.toString(Track.Instance().azimuth_angle);
 					}
 				}
-			}*/
+			}*//*
 		}
-	}
+	}*/
 	
-	@Override
+	/*@Override
 	protected void onResume() {
 		super.onResume();
 
 		sensorService.registerListener(this, sensorService.getDefaultSensor(Sensor.TYPE_ORIENTATION), SensorManager.SENSOR_DELAY_NORMAL);
-	}
+	}*/
 
-	@Override
+	/*@Override
 	protected void onStop() {
 		super.onStop();
 		
 		sensorService.unregisterListener(this, sensorService.getDefaultSensor(Sensor.TYPE_ORIENTATION));
-	}
+	}*/
 }

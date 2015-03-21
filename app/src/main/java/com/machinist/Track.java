@@ -20,9 +20,9 @@ public class Track {
     public List<Node> Nodes;
     public boolean AlarmState = false;
     
-    public float azimuth_angle = 0;
-    public float pitch_angle = 0;
-    public float roll_angle = 0;
+    //public float azimuth_angle = 0;
+    //public float pitch_angle = 0;
+    //public float roll_angle = 0;
     
     public void Destroy() {
     	Rails = null;

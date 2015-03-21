@@ -165,7 +165,7 @@ public class TrackViewMode extends BaseViewMode {
 	
 	private void ChangeNode(Node[] nodes) {
 		// todo: ik krijg hier een array van nodes door omdat ooit meerdere wissels tegelijk zullen kunnen switchen via een swipe-beweging
-		// maar voorlopig dus maar ééntje => nodes[0]
+		// maar voorlopig dus maar ï¿½ï¿½ntje => nodes[0]
 		
 		if (nodes[0].NodeTypeName.equalsIgnoreCase("kruispunt")) {
 			// doe niks
@@ -263,7 +263,7 @@ public class TrackViewMode extends BaseViewMode {
 		}
 		
 		matrix.reset();
-		matrix.postRotate(-Track.Instance().azimuth_angle, (Helper.get_largestAxis()) / 2.0f, (Helper.get_smallestAxis()) / 2.0f);
+		//matrix.postRotate(-Track.Instance().azimuth_angle, (Helper.get_largestAxis()) / 2.0f, (Helper.get_smallestAxis()) / 2.0f);
 		matrix.postTranslate(p.x, p.y);
 		matrix.postScale(zoom, zoom);
 		canvas.setMatrix(matrix);
